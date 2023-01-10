@@ -1,0 +1,32 @@
+@startuml
+
+class RSAEncryption {
+  -encrypt(plaintext: String, publicKey: PublicKey): String
+  -decrypt(ciphertext: String, privateKey: PrivateKey): String
+}
+
+class KeyGenerator {
+  -generateKeyPair(): KeyPair
+}
+
+class KeyPair {
+  -publicKey: String
+  -privateKey: String
+}
+
+class FileIO {
+  -save(keyPair: KeyPair, path: String): Boolean
+  -load(path: String): KeyPair
+}
+
+class Note {
+  -save(keyPair: KeyPair): Boolean
+  -load(): KeyPair
+}
+
+RSAEncryption --> KeyPair
+KeyGenerator --> KeyPair
+FileIO --> KeyPair
+Note --> KeyPair
+
+@enduml
