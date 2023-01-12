@@ -1,8 +1,8 @@
 @startuml
 
 class RSAEncryption {
-  -encrypt(plaintext: String, publicKey: PublicKey): String
-  -decrypt(ciphertext: String, privateKey: PrivateKey): String
+  -encrypt(message: String, publicKey: String): String
+  -decrypt(ciphertext: String, privateKey: String): String
 }
 
 class KeyGenerator {
